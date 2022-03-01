@@ -104,7 +104,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000000"
@@ -116,7 +116,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000"

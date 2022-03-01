@@ -203,7 +203,7 @@ metadata:
 spec:
   containers:
     - name: test
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
         - name: config-vol
           mountPath: /etc/config
@@ -699,7 +699,7 @@ metadata:
 spec:
   containers:
     - name: container-test
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
         - name: all-in-one
           mountPath: "/projected-volume"
@@ -739,7 +739,7 @@ metadata:
 spec:
   containers:
     - name: container-test
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
         - name: all-in-one
           mountPath: "/projected-volume"
@@ -777,7 +777,7 @@ metadata:
 spec:
   containers:
     - name: container-test
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
         - name: token-vol
           mountPath: "/service-account"
@@ -1081,7 +1081,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.name
-      image: busybox
+      image: busybox:1.28
       command:
         [
           "sh",
