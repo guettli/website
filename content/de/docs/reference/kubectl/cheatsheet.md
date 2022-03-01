@@ -263,7 +263,7 @@ kubectl logs my-pod -c my-container                 # Pod Container-Logdatei aus
 kubectl logs my-pod -c my-container --previous      # Pod Container-Logdatei für eine vorherige Instantiierung eines Containers ausgeben (stdout, multi-container case)
 kubectl logs -f my-pod                              # Pod-Logdatei streamen (stdout)
 kubectl logs -f my-pod -c my-container              # Pod Container-Logdatei streamen (stdout, multi-container case)
-kubectl run -i --tty busybox --image=busybox -- sh  # Pod als interaktive Shell ausführen
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # Pod als interaktive Shell ausführen
 kubectl attach my-pod -i                            # An laufenden Container anhängen
 kubectl port-forward my-pod 5000:6000               # Lauscht auf Port 5000 auf dem lokalen Computer und leitet den Port 6000 auf my-pod weiter
 kubectl exec my-pod -- ls /                         # Befehl in vorhandenem Pod ausführen (1 Container)

@@ -172,10 +172,10 @@ kubectl apply -f https://git.io/vPieo          # create resource(s) from url
 kubectl create deployment nginx --image=nginx  # start a single instance of nginx
 
 # create a Job which prints "Hello World"
-kubectl create job hello --image=busybox -- echo "Hello World" 
+kubectl create job hello --image=busybox:1.28 -- echo "Hello World" 
 
 # create a CronJob that prints "Hello World" every minute
-kubectl create cronjob hello --image=busybox   --schedule="*/1 * * * *" -- echo "Hello World"    
+kubectl create cronjob hello --image=busybox:1.28   --schedule="*/1 * * * *" -- echo "Hello World"    
 
 kubectl explain pods                           # get the documentation for pod manifests
 
@@ -227,10 +227,10 @@ kubectl apply -f https://git.io/vPieo         # 从 URL 中创建资源
 kubectl create deployment nginx --image=nginx # 启动单实例 nginx
 
 # 创建一个打印 “Hello World” 的 Job
-kubectl create job hello --image=busybox -- echo "Hello World" 
+kubectl create job hello --image=busybox:1.28 -- echo "Hello World" 
 
 # 创建一个打印 “Hello World” 间隔1分钟的 CronJob
-kubectl create cronjob hello --image=busybox   --schedule="*/1 * * * *" -- echo "Hello World"    
+kubectl create cronjob hello --image=busybox:1.28   --schedule="*/1 * * * *" -- echo "Hello World"    
 
 kubectl explain pods                          # 获取 pod 清单的文档说明
 
@@ -609,7 +609,7 @@ kubectl logs my-pod -c my-container --previous      # dump pod container logs (s
 kubectl logs -f my-pod                              # stream pod logs (stdout)
 kubectl logs -f my-pod -c my-container              # stream pod container logs (stdout, multi-container case)
 kubectl logs -f -l name=myLabel --all-containers    # stream all pods logs with label name=myLabel (stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # Run pod as interactive shell
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # Run pod as interactive shell
 kubectl run nginx --image=nginx -n 
 mynamespace                                         # Run pod nginx in a specific namespace
 kubectl run nginx --image=nginx                     # Run pod nginx and write its spec into a file called pod.yaml
@@ -634,7 +634,7 @@ kubectl logs my-pod -c my-container --previous      # 获取 Pod 中某容器的
 kubectl logs -f my-pod                              # 流式输出 Pod 的日志（标准输出）
 kubectl logs -f my-pod -c my-container              # 流式输出 Pod 容器的日志（标准输出, 多容器场景）
 kubectl logs -f -l name=myLabel --all-containers    # 流式输出含 name=myLabel 标签的 Pod 的所有日志（标准输出）
-kubectl run -i --tty busybox --image=busybox -- sh  # 以交互式 Shell 运行 Pod
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # 以交互式 Shell 运行 Pod
 kubectl run nginx --image=nginx -n mynamespace      # 在指定名字空间中运行 nginx Pod
 kubectl run nginx --image=nginx                     # 运行 ngins Pod 并将其规约写入到名为 pod.yaml 的文件
   --dry-run=client -o yaml > pod.yaml

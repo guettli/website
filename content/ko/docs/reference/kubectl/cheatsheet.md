@@ -92,10 +92,10 @@ kubectl apply -f https://git.io/vPieo          # url로부터 리소스(들) 생
 kubectl create deployment nginx --image=nginx  # nginx 단일 인스턴스를 시작
 
 # "Hello World"를 출력하는 잡(Job) 생성
-kubectl create job hello --image=busybox -- echo "Hello World"
+kubectl create job hello --image=busybox:1.28 -- echo "Hello World"
 
 # 매분마다 "Hello World"를 출력하는 크론잡(CronJob) 생성
-kubectl create cronjob hello --image=busybox   --schedule="*/1 * * * *" -- echo "Hello World"    
+kubectl create cronjob hello --image=busybox:1.28   --schedule="*/1 * * * *" -- echo "Hello World"    
 
 kubectl explain pods                           # 파드 매니페스트 문서를 조회
 
@@ -310,7 +310,7 @@ kubectl logs my-pod -c my-container --previous      # 컨테이너의 이전 인
 kubectl logs -f my-pod                              # 실시간 스트림 파드 로그(stdout)
 kubectl logs -f my-pod -c my-container              # 실시간 스트림 파드 로그(stdout, 멀티-컨테이너 경우)
 kubectl logs -f -l name=myLabel --all-containers    # name이 myLabel인 모든 파드의 로그 스트리밍 (stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # 대화형 셸로 파드를 실행
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # 대화형 셸로 파드를 실행
 kubectl run nginx --image=nginx -n mynamespace      # mynamespace 네임스페이스에서 nginx 파드 1개 실행
 kubectl run nginx --image=nginx                     # nginx 파드를 실행하고 해당 스펙을 pod.yaml 파일에 기록
 --dry-run=client -o yaml > pod.yaml

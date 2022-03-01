@@ -113,7 +113,7 @@ clusterip    ClusterIP   10.0.170.92   <none>        80/TCP    51s
 そして、同じクラスター上のPodから`ClusterIP`にアクセスします。
 
 ```shell
-kubectl run busybox -it --image=busybox --restart=Never --rm
+kubectl run busybox -it --image=busybox:1.28 --restart=Never --rm
 ```
 
 出力は次のようになります。

@@ -94,7 +94,7 @@ Autoscalerがどのように負荷の増加に反応するか見てみましょ�
 コンテナを作成し、クエリの無限ループをphp-apacheサーバーに送ってみます（これは別のターミナルで実行してください）。
 
 ```shell
-kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
 数分以内に、下記を実行することでCPU負荷が高まっていることを確認できます。

@@ -106,7 +106,7 @@ Sekarang, kita akan melihat bagaimana _autoscaler_ bereaksi terhadap peningkatan
 Kita akan memulai sebuah Container, dan mengirimkan perulangan kueri tak terbatas ke Service php-apache (jalankan di terminal yang berbeda):
 
 ```shell
-kubectl run -it --rm load-generator --image=busybox /bin/sh
+kubectl run -it --rm load-generator --image=busybox:1.28 /bin/sh
 
 Hit enter for command prompt
 

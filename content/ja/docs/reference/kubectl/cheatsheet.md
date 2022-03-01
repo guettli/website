@@ -292,7 +292,7 @@ kubectl logs my-pod -c my-container --previous      # 複数コンテナがあ�
 kubectl logs -f my-pod                              # Podのログをストリームで確認します(標準出力)
 kubectl logs -f my-pod -c my-container              # 複数のコンテナがあるPodで、特定のコンテナのログをストリームで確認します(標準出力)
 kubectl logs -f -l name=myLabel --all-containers    # name-myLabelラベルを持つすべてのコンテナのログをストリームで確認します(標準出力)
-kubectl run -i --tty busybox --image=busybox -- sh  # Podをインタラクティブシェルとして実行します
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # Podをインタラクティブシェルとして実行します
 kubectl run nginx --image=nginx -n 
 mynamespace                                         # 特定の名前空間でnginx Podを実行します
 kubectl run nginx --image=nginx                     # nginx Podを実行し、マニフェストファイルをpod.yamlという名前で書き込みます
