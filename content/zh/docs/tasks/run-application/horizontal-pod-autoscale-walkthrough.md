@@ -194,7 +194,7 @@ We will start a container, and send an infinite loop of queries to the php-apach
 （请在另一个终端中运行以下命令）：
 
 ```shell
-kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
 <!--

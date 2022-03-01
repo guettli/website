@@ -152,7 +152,7 @@ php-apache   Deployment/php-apache/scale   0% / 50%  1         10        1      
 ```shell
 # 부하 생성을 유지하면서 나머지 스텝을 수행할 수 있도록,
 # 다음의 명령을 별도의 터미널에서 실행한다.
-kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
 이제 아래 명령을 실행한다.

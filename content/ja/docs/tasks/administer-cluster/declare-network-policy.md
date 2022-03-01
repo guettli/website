@@ -67,7 +67,7 @@ pod/nginx-701339712-e0qfq   1/1           Running       0          35s
 これで、新しい`nginx`サービスに他のPodからアクセスできるようになったはずです。`default`名前空間内の他のPodから`nginx` Serviceにアクセスするために、busyboxコンテナを起動します。
 
 ```console
-kubectl run busybox --rm -ti --image=busybox -- /bin/sh
+kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh
 ```
 
 シェルの中で、次のコマンドを実行します。
@@ -110,7 +110,7 @@ networkpolicy.networking.k8s.io/access-nginx created
 `nginx` Serviceに正しいラベルが付いていないPodからアクセスを試してみると、リクエストがタイムアウトします。
 
 ```console
-kubectl run busybox --rm -ti --image=busybox -- /bin/sh
+kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh
 ```
 
 シェルの中で、次のコマンドを実行します。
@@ -129,7 +129,7 @@ wget: download timed out
 正しいラベルが付いたPodを作成すると、リクエストが許可されるようになるのがわかります。
 
 ```console
-kubectl run busybox --rm -ti --labels="access=true" --image=busybox -- /bin/sh
+kubectl run busybox --rm -ti --labels="access=true" --image=busybox:1.28 -- /bin/sh
 ```
 
 シェルの中で、次のコマンドを実行します。

@@ -107,7 +107,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000000"
@@ -119,7 +119,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000"
@@ -291,7 +291,7 @@ kubectl logs my-pod -c my-container --previous      # Affiche les logs d'un cont
 kubectl logs -f my-pod                              # Fait défiler (stream) les logs du pod (stdout)
 kubectl logs -f my-pod -c my-container              # Fait défiler (stream) les logs d'un conteneur particulier du pod (stdout, cas d'un pod multi-conteneurs)
 kubectl logs -f -l name=myLabel --all-containers    # Fait défiler (stream) les logs de tous les pods ayant le label name=myLabel (stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # Exécute un pod comme un shell interactif
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # Exécute un pod comme un shell interactif
 kubectl run nginx --image=nginx --restart=Never -n
 mynamespace                                         # Exécute le pod nginx dans un namespace spécifique
 kubectl run nginx --image=nginx --restart=Never     # Simule l'exécution du pod nginx et écrit sa spécification dans un fichier pod.yaml

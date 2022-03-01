@@ -104,7 +104,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000000"
@@ -116,7 +116,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000"
@@ -288,7 +288,7 @@ kubectl logs my-pod -c my-container --previous      # kết xuất logs của co
 kubectl logs -f my-pod                              # lấy logs của pod my-pod (stdout)
 kubectl logs -f my-pod -c my-container              # lấy logs của container my-container trong pod my-pod (stdout, trường hợp nhiều container)
 kubectl logs -f -l name=myLabel --all-containers    # lấy logs của tất cả các container của pod có nhãn name=myLabel (stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # Chạy pod trong một shell tương tác
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # Chạy pod trong một shell tương tác
 kubectl run nginx --image=nginx --restart=Never -n 
 mynamespace                                         # Chạy pod nginx trong một namespace cụ thể
 kubectl run nginx --image=nginx --restart=Never     # Chạy pod nginx và ghi spec của nó vào file có tên pod.yaml

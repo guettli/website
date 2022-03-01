@@ -198,7 +198,7 @@ metadata:
 spec:
   containers:
     - name: test
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
         - name: config-vol
           mountPath: /etc/config
@@ -584,7 +584,7 @@ metadata:
 spec:
   containers:
   - name: container-test
-    image: busybox
+    image: busybox:1.28
     volumeMounts:
     - name: all-in-one
       mountPath: "/projected-volume"
@@ -624,7 +624,7 @@ metadata:
 spec:
   containers:
   - name: container-test
-    image: busybox
+    image: busybox:1.28
     volumeMounts:
     - name: all-in-one
       mountPath: "/projected-volume"
@@ -661,7 +661,7 @@ metadata:
 spec:
   containers:
   - name: container-test
-    image: busybox
+    image: busybox:1.28
     volumeMounts:
     - name: token-vol
       mountPath: "/service-account"
@@ -955,7 +955,7 @@ spec:
         fieldRef:
           apiVersion: v1
           fieldPath: metadata.name
-    image: busybox
+    image: busybox:1.28
     command: [ "sh", "-c", "while [ true ]; do echo 'Hello'; sleep 10; done | tee -a /logs/hello.txt" ]
     volumeMounts:
     - name: workdir1
@@ -1051,7 +1051,7 @@ metadata:
 spec:
   containers:
     - name: my-frontend
-      image: busybox
+      image: busybox:1.28
       volumeMounts:
       - mountPath: "/data"
         name: my-csi-inline-vol

@@ -105,7 +105,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000000"
@@ -117,7 +117,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000"
@@ -298,7 +298,7 @@ kubectl logs my-pod -c my-container --previous      # вывести логи к
 kubectl logs -f my-pod                              # вывести логи пода в режиме реального времени (в stdout)
 kubectl logs -f my-pod -c my-container              # вывести логи контейнера пода в режиме реального времени (в stdout, при работе с несколькими контейнерами)
 kubectl logs -f -l name=myLabel --all-containers    # вывести логи всех подов с меткой myLabel (в stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # запустить под как интерактивную оболочку
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # запустить под как интерактивную оболочку
 kubectl run nginx --image=nginx --restart=Never -n
 mynamespace                                         # Запустить под nginx в заданном пространстве имён
 kubectl run nginx --image=nginx --restart=Never     # Запустить под nginx и записать его спецификацию в файл pod.yaml

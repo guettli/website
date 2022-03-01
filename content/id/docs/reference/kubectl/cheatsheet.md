@@ -105,7 +105,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000000"
@@ -117,7 +117,7 @@ metadata:
 spec:
   containers:
   - name: busybox
-    image: busybox
+    image: busybox:1.28
     args:
     - sleep
     - "1000"
@@ -289,7 +289,7 @@ kubectl logs my-pod -c my-container --previous      # memperlihatkan log dari ko
 kubectl logs -f my-pod                              # memperlihatkan aliran log dari Pod (keluaran stdout)
 kubectl logs -f my-pod -c my-container              # memperlihatkan aliran log dari kontainer di dalam Pod (keluaran stdout, kasus banyak kontainer)
 kubectl logs -f -l name=myLabel --all-containers    # memperlihatkan aliran log dari Pod dengan label name=myLabel (keluaran stdout)
-kubectl run -i --tty busybox --image=busybox -- sh  # menjalankan Pod sebagai shell interaktif
+kubectl run -i --tty busybox --image=busybox:1.28 -- sh  # menjalankan Pod sebagai shell interaktif
 kubectl run nginx --image=nginx --restart=Never -n 
 mynamespace                                         # menjalankan Pod nginx ke dalam Namespace tertentu
 kubectl run nginx --image=nginx --restart=Never     # menjalankan Pod nginx dan menulis spesifikasinya ke dalam sebuah berkas bernama pod.yaml

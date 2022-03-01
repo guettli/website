@@ -50,7 +50,7 @@ cronjob.batch/hello created
 Kamu juga dapat menggunakan `kubectl run` untuk membuat sebuah CronJob tanpa menulis sebuah konfigurasi yang lengkap:
 
 ```shell
-kubectl run hello --schedule="*/1 * * * *" --restart=OnFailure --image=busybox -- /bin/sh -c "date; echo Hello from the Kubernetes cluster"
+kubectl run hello --schedule="*/1 * * * *" --restart=OnFailure --image=busybox:1.28 -- /bin/sh -c "date; echo Hello from the Kubernetes cluster"
 ```
 
 Setelah membuat sebuah CronJob, untuk mengecek statusnya kamu dapat menggunakan perintah berikut:

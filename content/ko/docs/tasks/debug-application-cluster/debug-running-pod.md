@@ -110,7 +110,7 @@ OCI runtime exec failed: exec failed: container_linux.go:346: starting container
 컨테이너의 콘솔에 자동으로 연결할 것이다.
 
 ```shell
-kubectl debug -it ephemeral-demo --image=busybox --target=ephemeral-demo
+kubectl debug -it ephemeral-demo --image=busybox:1.28 --target=ephemeral-demo
 ```
 
 ```
@@ -181,7 +181,7 @@ kubectl delete pod ephemeral-demo
 시나리오는 `kubectl run` 명령을 통해 시뮬레이션 해볼 수 있다.
 
 ```shell
-kubectl run myapp --image=busybox --restart=Never -- sleep 1d
+kubectl run myapp --image=busybox:1.28 --restart=Never -- sleep 1d
 ```
 
 다음의 명령을 실행시켜 디버깅을 위한 새로운 우분투 컨테이너와 함께 `myapp-debug`이란
@@ -224,7 +224,7 @@ kubectl delete pod myapp myapp-debug
 사례를 시뮬레이션해 볼 수 있다.
 
 ```
-kubectl run --image=busybox myapp -- false
+kubectl run --image=busybox:1.28 myapp -- false
 ```
 
 `kubectl describe pod myapp` 명령을 통해 이 컨테이너에 크래시가 발생하고 있음을 확인할 수 있다.
@@ -282,7 +282,7 @@ kubectl delete pod myapp myapp-debug
 이 사례를 보여주기 위해 `kubectl run` 명령을 통해 파드를 생성하였다.
 
 ```
-kubectl run myapp --image=busybox --restart=Never -- sleep 1d
+kubectl run myapp --image=busybox:1.28 --restart=Never -- sleep 1d
 ```
 
 여기서는 `kubectl debug` 명령을 통해 해당 컨테이너 이미지를 `ubuntu`로 변경하며
