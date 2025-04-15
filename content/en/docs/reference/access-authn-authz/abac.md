@@ -13,6 +13,8 @@ weight: 39
 Attribute-based access control (ABAC) defines an access control paradigm whereby access rights are granted
 to users through the use of policies which combine attributes together.
 
+ABAC is a legacy authorization mechanism that is no longer recommended for new Kubernetes clusters.
+
 <!-- body -->
 ## Policy File Format
 
